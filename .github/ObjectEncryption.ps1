@@ -2,8 +2,8 @@ $repos = Get-VBORepository
 
 foreach ($repo in $repos)
   {
-      write-host (Get-VBORepository).
+      
+      $color = "red"
+      If (($repo).EnableObjectStorageEncryption -eq "true") {$color = "white"}
+      write-host $repo.name $repo.EnableObjectStorageEncryption -ForegroundColor $color
   }
-
-
-(Get-VBORepository).EnableObjectStorageEncryption
